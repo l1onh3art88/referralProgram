@@ -64,7 +64,7 @@
                             <label for="referral" class="col-md-4 col-form-label text-md-right">{{ __('Referral Code') }}</label>
 
                             <div class="col-md-6">
-                                <input id="referral" type="text" class="form-control{{ $errors->has('referral') ? ' is-invalid' : '' }}" name="referral" required>
+                                <input id="referral" type="text" class="form-control{{ $errors->has('referral') ? ' is-invalid' : '' }}" name="referral">
 
                                 @if ($errors->has('referral'))
                                     <span class="invalid-feedback">
