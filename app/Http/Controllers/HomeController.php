@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class HomeController extends Controller
 {
@@ -23,6 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if(Auth::user()){
+            $usedCodeCount = DB::table('users')->where('referred_by',Auth::user()->affiliate_id)->count(); 
+            return view('home',['referredCount'=>$usedCodeCount]);  
+        }
+
         return view('home');
     }
 }

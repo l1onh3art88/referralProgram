@@ -18,6 +18,9 @@
                             <input style="width:100%;"type="text" readonly="readonly"
                                 value="{{Auth::user()->affiliate_id }}">
                         </div>
+                        <div class = "referralUsage">
+                            <h1>Your referral code has been used {{$referredCount}} times!</h1>
+                        </div>
                     @endauth
 
                     You are logged in!
