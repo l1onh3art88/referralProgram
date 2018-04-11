@@ -19,7 +19,7 @@
                                 value="{{Auth::user()->affiliate_id }}">
                         </div>
                         <div class = "referralUsage">
-                            <h1>Your referral code has been used {{$referredCount}} times!</h1>
+                            <h1>Number of times referral code used: {{$referredCount}}</h1>
                         </div>
                     @endauth
 
