@@ -63,10 +63,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        $referred_by = Cookie::get('referral');
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'affiliate_id'=> str_random(10),
+            'referred_by'=> $referred_by,
         ]);
     }
 }
