@@ -14,8 +14,10 @@
                         </div>
                     @endif
                     @auth
-                        <input style="width:100%;"type="text" readonly="readonly"
-                                value="{{ url('/') . '/?ref=' . Auth::user()->affiliate_id }}">
+                        <div class="referralCode">
+                            <input style="width:100%;"type="text" readonly="readonly"
+                                value="{{Auth::user()->affiliate_id }}">
+                        </div>
                     @endauth
 
                     You are logged in!

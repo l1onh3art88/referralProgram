@@ -52,6 +52,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'referral'=>'string|exists:users,affiliate_id'
         ]);
     }
 
@@ -64,13 +65,12 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
 
-        $referred_by = Cookie::get('referral');
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'affiliate_id'=> str_random(10),
-            'referred_by'=> $referred_by,
+            'referred_by'=> $data['referral']
         ]);
     }
 }

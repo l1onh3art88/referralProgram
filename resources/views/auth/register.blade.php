@@ -59,6 +59,20 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
+
+                        <div class="form-group row">
+                            <label for="referral" class="col-md-4 col-form-label text-md-right">{{ __('Referral Code') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="referral" type="text" class="form-control{{ $errors->has('referral') ? ' is-invalid' : '' }}" name="referral" required>
+
+                                @if ($errors->has('referral'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('referral') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                        
 
 
