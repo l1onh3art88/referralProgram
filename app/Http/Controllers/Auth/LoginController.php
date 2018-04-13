@@ -96,4 +96,15 @@ class LoginController extends Controller
 
         return redirect()->intended($this->redirectTo);
     }
+
+    /** 
+    *
+    *
+    *   override sendLockoutResponse method when to many attempts are made on the 2fa
+    */
+
+    protected function sendLockoutResponse(Request $request)
+    {
+        return redirect('login');
+    }
 }
